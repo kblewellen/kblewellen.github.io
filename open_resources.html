@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Student Tools — Ms. Lewellen</title>
+<title>Open Resources — Ms. Lewellen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 
   <!-- HEADER -->
   <div style="background: #032260; border-bottom: 1px solid #021a52; padding: 18px 36px; display: flex; align-items: center; justify-content: space-between;">
-    <span id="header-title" style="font-size: 15px; font-weight: 600; color: #548a96; letter-spacing: -0.01em; transition: color .15s ease;">Student Tools from Ms. Lewellen</span>
+    <span id="header-title" style="font-size: 15px; font-weight: 600; color: #548a96; letter-spacing: -0.01em; transition: color .15s ease;">Open Resources from Ms. Lewellen</span>
     <a href="index.html" style="font-size: 13px; color: #548a96; display: flex; align-items: center; gap: 5px;">← Main site</a>
   </div>
 
@@ -36,7 +36,7 @@
   <!-- CONTENT -->
   <div style="flex: 1; max-width: 950px; width: 100%; margin: 0 auto; padding: 44px 36px 72px;">
 
-    <!-- class heading (hidden in all-tools view) -->
+    <!-- class heading (hidden in all-tools view and for tabs with hideHeading) -->
     <div id="class-heading" style="margin-bottom: 36px;">
       <div id="class-meta" style="font-family: 'Spline Sans Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #6f8197; margin-bottom: 10px;"></div>
       <h1 id="class-title" style="font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 10px;"></h1>
@@ -62,16 +62,34 @@
 
 <script>
 const TOOLS = {
+  aiFramework: {
+    name: 'AI Framework',
+    kind: 'Framework',
+    kicker2: 'KBL',
+    glyph: '◆',
+    desc: 'The AI use accountability framework underlying CS@Andover AI-integrated coursework — roles, skills, and expectations for students working with AI.',
+    href: '#',
+  },
   help411: {
     name: '411 Help',
     kind: 'Student tool',
+    kicker2: 'KBL · Claude Code',
     glyph: '◈',
     desc: 'Pick your skills, name your need, and compose an AI ask that keeps the thinking yours.',
     href: 'student_tools/411_help/411_help_v4.html',
   },
+  help411Teacher: {
+    name: 'AI Use Dashboard',
+    kind: 'Teacher tool',
+    kicker2: 'KBL · Claude Code',
+    glyph: '⊞',
+    desc: 'Upload student logbook entries and see a heatmap of where the class sought AI help — broken down by role and day.',
+    href: 'teacher_tools/411_help/411_help_heatmatp_v1.html',
+  },
   gateCrashers: {
     name: 'Gate Crashers',
     kind: 'Game',
+    kicker2: 'KBL · Claude Code',
     glyph: '⊘',
     desc: 'Debug broken logic gate circuits — trace the signal, find what GlitchBot swapped.',
     href: 'edu_games/gate-crashers/index.html',
@@ -79,22 +97,33 @@ const TOOLS = {
   vexSim: {
     name: 'VEX Sim',
     kind: 'Simulator',
+    kicker2: 'KBL · Claude Code',
     glyph: '▷',
     desc: 'Upload your VEXcode Python and watch your robot trace its path on a virtual field.',
     href: 'vex_sim/index.html',
   },
 };
 
-const ALL_TOOLS = [TOOLS.vexSim, TOOLS.gateCrashers, TOOLS.help411];
+const ALL_TOOLS = [TOOLS.aiFramework, TOOLS.vexSim, TOOLS.gateCrashers, TOOLS.help411];
 
 const CLASSES = [
+  {
+    id: 'general',
+    code: 'GEN',
+    shortTitle: 'General',
+    title: '',
+    meta: '',
+    blurb: '',
+    hideHeading: true,
+    tools: [TOOLS.aiFramework],
+  },
   {
     id: 'csc401',
     code: '401',
     shortTitle: 'Python',
     title: 'Programming in Python',
     meta: 'CSC401 · Introductory · T1, T2',
-    blurb: 'An introduction to computational thinking primarily through the exploration of the Python programming language. Students design and code their own programming projects throughout the course. The course sometines includes additional applications such as programming introductory data analysis, game development, and vibe coding. ',
+    blurb: 'An introduction to computational thinking primarily through the exploration of the Python programming language. Students design and code their own programming projects throughout the course. The course sometimes includes additional applications such as programming introductory data analysis, game development, and vibe coding.',
     tools: [],
   },
   {
@@ -103,7 +132,7 @@ const CLASSES = [
     shortTitle: 'Robotics',
     title: 'Robotics',
     meta: 'CSC411 · Introductory · T1, T3',
-    blurb: 'A hands-on, project-based course where students  use the engineering process to engage in science-driven decision making and review physical concepts involved in the design and construction of a robot. Students  create robotcs capable of complex behaviors while exploring different aspects of robot design and how they come together in the creation of a robot, including ethical and cultural elements surrounding the use of artificial intelligence.',
+    blurb: 'A hands-on, project-based course where students use the engineering process to engage in science-driven decision making and review physical concepts involved in the design and construction of a robot. Students create robots capable of complex behaviors while exploring different aspects of robot design and how they come together in the creation of a robot, including ethical and cultural elements surrounding the use of artificial intelligence.',
     tools: [TOOLS.vexSim, TOOLS.help411],
   },
   {
@@ -112,7 +141,7 @@ const CLASSES = [
     shortTitle: 'Organization',
     title: 'Computer Organization & Hardware',
     meta: 'CSC454 · Intermediate · T3',
-    blurb: 'An introduction to the organization and design of computer systems. Students invent and explore the essential hardware and software commponents of computational devices. Topics include digital logic, circuit design, memory architectures and hierarchies, and assembly language(s). Over the course of the term, students will complete a series of projects that gradually build the components of a simple computer system in simulation.',
+    blurb: 'An introduction to the organization and design of computer systems. Students invent and explore the essential hardware and software components of computational devices. Topics include digital logic, circuit design, memory architectures and hierarchies, and assembly language(s). Over the course of the term, students will complete a series of projects that gradually build the components of a simple computer system in simulation.',
     tools: [TOOLS.gateCrashers],
   },
   {
@@ -130,7 +159,7 @@ const CLASSES = [
     shortTitle: 'Autonomous',
     title: 'Autonomous Systems',
     meta: 'CSC571 · Advanced · T2',
-    blurb: 'A hands-on, project-driven introduction to the design and control of autonomous systems. Students plan and build cyber-physical and autonomous systems in self-selected domains. Their projects drive explorations of necesssy robotics, artificial intelligence, and control engineering  to achieve their goals. Woven throughout this work, the students explore the ethical and societal implications of these systems.',
+    blurb: 'A hands-on, project-driven introduction to the design and control of autonomous systems. Students plan and build cyber-physical and autonomous systems in self-selected domains. Their projects drive explorations of necessary robotics, artificial intelligence, and control engineering to achieve their goals. Woven throughout this work, the students explore the ethical and societal implications of these systems.',
     tools: [TOOLS.vexSim, TOOLS.help411],
   },
   {
@@ -142,11 +171,22 @@ const CLASSES = [
     blurb: 'Various math classes, most recently precalculus and calculus, taught alongside other Andover faculty. I teach math with a focus on exploration, reasoning, and connection which draws from traditions of complex instruction, problem-based learning, and standards-based grading.',
     tools: [],
   },
+  {
+    id: 'teacher',
+    code: 'TCH',
+    shortTitle: 'Teacher',
+    title: '',
+    meta: '',
+    blurb: '',
+    hideHeading: true,
+    tools: [TOOLS.aiFramework, TOOLS.help411Teacher],
+  },
 ];
 
 let activeId = null;
 
 function toolCardHTML(t) {
+  const kicker2 = t.kicker2 !== undefined ? t.kicker2 : 'KBL · Claude Code';
   return `
     <div data-href="${t.href}" class="tool-card" style="
       background: #fff; border: 1px solid #dce8ea; border-radius: 14px;
@@ -157,7 +197,7 @@ function toolCardHTML(t) {
         font-size: 20px; color: #0c5969; margin-bottom: 14px;">${t.glyph}</div>
       <div style="font-size: 16px; font-weight: 600; margin-bottom: 6px;">${t.name}</div>
       <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #548a96; margin-bottom: 3px;">${t.kind}</div>
-      <div style="font-family: 'Spline Sans Mono', monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #c8d2dd; margin-bottom: 10px;">KBL · Claude Code</div>
+      <div style="font-family: 'Spline Sans Mono', monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #c8d2dd; margin-bottom: 10px;">${kicker2}</div>
       <div style="font-size: 13.5px; line-height: 1.5; color: #56657a;">${t.desc}</div>
     </div>
   `;
@@ -189,18 +229,24 @@ function renderContent() {
 
   if (activeId === null) {
     heading.style.display = 'none';
-    label.textContent = 'All tools';
+    label.textContent = 'All resources';
     grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
     grid.innerHTML = ALL_TOOLS.map(toolCardHTML).join('');
     return;
   }
 
-  heading.style.display = '';
-  label.textContent = 'Tools';
   const c = CLASSES.find(x => x.id === activeId);
-  document.getElementById('class-meta').textContent = c.meta;
-  document.getElementById('class-title').textContent = c.title;
-  document.getElementById('class-blurb').textContent = c.blurb;
+
+  if (c.hideHeading) {
+    heading.style.display = 'none';
+  } else {
+    heading.style.display = '';
+    document.getElementById('class-meta').textContent = c.meta;
+    document.getElementById('class-title').textContent = c.title;
+    document.getElementById('class-blurb').textContent = c.blurb;
+  }
+
+  label.textContent = 'Tools';
 
   if (c.tools.length === 0) {
     grid.style.gridTemplateColumns = '1fr';
