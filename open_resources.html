@@ -68,7 +68,8 @@ const TOOLS = {
     kicker2: 'KBL',
     glyph: '◆',
     desc: 'The AI use accountability framework underlying CS@Andover AI-integrated coursework — roles, skills, and expectations for students working with AI.',
-    href: '#',
+    href: 'ai_framework.html',
+    linkable: true,
   },
   help411: {
     name: '411 Help',
@@ -187,8 +188,10 @@ let activeId = null;
 
 function toolCardHTML(t) {
   const kicker2 = t.kicker2 !== undefined ? t.kicker2 : 'KBL · Claude Code';
+  const tag = t.linkable ? 'a' : 'div';
+  const hrefAttr = t.linkable ? `href="${t.href}"` : `data-href="${t.href}"`;
   return `
-    <div data-href="${t.href}" class="tool-card" style="
+    <${tag} ${hrefAttr} class="tool-card" style="
       background: #fff; border: 1px solid #dce8ea; border-radius: 14px;
       padding: 22px 20px; display: block; color: inherit;">
       <div style="
@@ -199,7 +202,7 @@ function toolCardHTML(t) {
       <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #548a96; margin-bottom: 3px;">${t.kind}</div>
       <div style="font-family: 'Spline Sans Mono', monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #c8d2dd; margin-bottom: 10px;">${kicker2}</div>
       <div style="font-size: 13.5px; line-height: 1.5; color: #56657a;">${t.desc}</div>
-    </div>
+    </${tag}>
   `;
 }
 

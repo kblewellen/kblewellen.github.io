@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Framework — Ms. Lewellen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100vh; }
+  body { background: #f1f4f8; font-family: 'Libre Franklin', system-ui, sans-serif; -webkit-font-smoothing: antialiased; color: #15202e; }
+  ::selection { background: #b8d8de; }
+  a { color: inherit; text-decoration: none; }
+  .cat-card { transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+  .cat-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -18px rgba(21,32,46,0.35); border-color: #c0cedc; }
+  .card-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #e4eaf8; }
+  /* Reset browser-default p margins inside cards */
+  .cat-card p { margin: 0 0 10px; }
+  .cat-card p:last-child { margin-bottom: 0; }
+  /* Tighten list styling inside cards */
+  .cat-card ul { margin: 4px 0 8px; padding-left: 20px; }
+  .cat-card li { margin-bottom: 6px; }
+  .cat-card li:last-child { margin-bottom: 0; }
+  /* card-cols: list is primary content, no outer vertical margin */
+  .card-cols ul { margin: 0; padding-left: 18px; }
+  /* Callout block: reduce p tag margins inside li elements */
+  .callout-list p { margin: 3px 0 8px; }
+  .callout-list p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- HEADER -->
+  <div style="background: #032260; border-bottom: 1px solid #021a52; padding: 18px 36px; display: flex; align-items: center; justify-content: space-between;">
+    <span style="font-size: 15px; font-weight: 600; color: #548a96; letter-spacing: -0.01em;">AI Framework · Katelin Bailey Lewellen</span>
+    <a href="index.html" style="font-size: 13px; color: #548a96;">← Main site</a>
+  </div>
+
+  <!-- CONTENT -->
+  <div style="flex: 1; max-width: 950px; width: 100%; margin: 0 auto; padding: 52px 36px 80px;">
+
+    <!-- PREFACE -->
+    <div style="font-family: 'Spline Sans Mono', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #0c5969; margin-bottom: 16px;">AI Use Framework</div>
+    <h1 style="font-size: 34px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: #15202e; margin: 0 0 22px;">The 5-Cs Model of Ethical AI Use</h1>
+    <p style="font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 14px; max-width: 680px;"> This is a framework that I started building in the fall of 2025 in response to student complaints I heard around campus - that teachers said "don't use AI" but clearly were using AI themselves. This seemed like a valid complaint, and I highly value transparency in my teaching, so I wanted to do something to contribute to a solution, not be part of the problem. I use AI at work (and at home) extensively. But I'm intentional about my use and try to structure it well. This framework is an attempt to encode the ideas behind how and why I use AI myself, as a first pass at a moral compass for AI use.</p>
+    <p style="font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 14px; max-width: 680px;"> You (as a student, teacher, or other community member) are building your own ethical relationship with AI, and that's part of becoming an independent thinker and adapting to changing technology. It can also be really hard!</p>
+    <p style="font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 52px; max-width: 680px;"> As a student in my classes, you'll be asked to take on this framework and live with my moral code for the trimester. That might feel uncomfortable, or it might help provide clarity. In either case, I encourage you to be open with me about feedback and where it challenges you. Recall,  however, that while personal ethics can evolve, academic integrity is a community standard, and your actions must meet that standard.    </p>
+    <!-- COMPONENT SECTION KICKER -->
+    <div style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #93a3b5; padding-top: 24px; border-top: 1px solid #e4eaf8; margin-bottom: 20px;">Framework components</div>
+
+    <!-- CATEGORY CARDS (single-column stack) -->
+    <div style="display: grid; grid-template-columns: 1fr; gap: 18px; margin-bottom: 18px;">
+
+      <div class="cat-card" style="background: #fff; border: 1px solid #dce8ea; border-radius: 14px; padding: 28px;">
+        <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 14px;">C1 · Creativity</div>
+        <div style="font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;">"Create First, Sift in Dialogue"</div>
+        <div style="font-size: 14px; line-height: 1.65; color: #56657a;">
+          <p>Creativity begets creativity. When you engage in creative work, it builds your intuition, taste, and problem-solving instincts. Unused creative muscles atrophy. To develop yours, and use your own unique taste for writing, design, and structures, generate your own idea or attempt first, even if it's incomplete. Afterward, AI can help expand or refine what you've already created.</p>
+          <p>Work that falls into this category might include brainstorming, sketching ideas, modeling, exploring patterns, ideation, generating multiple approaches, trying something before you know it works. Writing almost always falls into this category.</p>
+          <p>Side note - there are some instances where you as a person don't want to own the creative authorship for your project. This is likely okay on personal projects, but don't assume it's acceptable in class. </p>
+        </div>
+        <div class="card-cols">
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>You might use creativity to generate ideas, sketches, predictions, and models before using AI</li>
+                <li>AI might expand on your ideas or help you distill them after you've generated as far as you can.</li>
+                <li>Creativity is often part of the discipline learning in your classes, even in unexpected places (math!)</li>
+                <li>AI should not block a student's opportunity to build intuition and design sense.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>You might use creativity to generate concepts for lessons, assignments, metaphors, and policies before using AI.</li>
+                <li>AI might help broaden the accessibility or appeal of your ideas, reframe metaphors, or add variants to assignments, after you've generated as far as you can.</li>
+                <li>Creativity is expressed through pedagogy and curriculum design.</li>
+                <li>AI should not override a teacher's pedagogical reasoning.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card" style="background: #fff; border: 1px solid #dce8ea; border-radius: 14px; padding: 28px;">
+        <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 14px;">C2 · Core Skills</div>
+        <div style="font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;">"Attempt - Ask - Audit"</div>
+        <div style="font-size: 14px; line-height: 1.65; color: #56657a;">
+          <p>Core skills are the discipline learning for a student or the expertise of the teacher. They are the core aspects that make it worthwhile to show up in the classroom each day. For these skills, you must make an honest first attempt before turning to AI, but you do not need to work to exhaustion. Even after turning to AI, you are still responsible for auditing AI's response using your own understanding and checking its validity. These skills cannot be fully outsourced.</p>
+          <p>Work that falls into this category might include writing code, reasoning through multi-step problems, analyzing data, building mathematical arguments, debugging your own logic, designing an experiment, working through a procedure or algorithm.</p>
+          <p>A good check if you've put in an honest attempt is whether you can fill in the following blanks:</p> 
+          <p>"I am trying to do <i>[skill or action]</i>. I tried and expected <i>[desired result]</i> but instead got <i>[actual result]</i>. I then attempted these things: <i>[list three revisions or additional actions, like research]</i>. I saw the following results <i>[list results from revisions]</i>. Can you help me?"  </p>
+        </div>
+        <div class="card-cols">
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' core skills might be coding, debugging, algebraic manipulation, mechanical reasoning, modeling, test design, problem solving</li>
+                <li>AI cannot do the thinking for the students</li>
+                <li>Work in this category should feel like a "good stretch" - not so easy that you never make a mistake, not so hard that you feel like you are only making mistakes. Use resources to tune that mental exertion level.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Teachers' core skills might be pedagogy, sequencing, assessment design, interpreting student thinking, diagnosing misconceptions, curricular judgment.</li>
+                <li>AI cannot do the teaching or evaluation (assessment) for instructors.</li>
+                <li>Work in this category should feel like a "good stretch" - not so easy that you never feel the urge to revise or revisit, not so hard that you feel like you are constantly recreating the wheel. Use resources to tune that mental exertion level.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card" style="background: #fff; border: 1px solid #dce8ea; border-radius: 14px; padding: 28px;">
+        <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 14px;">C3 · Clarify Issues</div>
+        <div style="font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;">"Point it out"</div>
+        <div style="font-size: 14px; line-height: 1.65; color: #56657a;">
+          <p>Clarifying issues is a specific sort of skill - it is locating the place where you have gone wrong. We can use AI to help us see more clearly where the issue might be, but it shouldn't be used to do the actual identification or diagnosis, or choose a solution for you.</p>
+          <p>Work that falls into this category might include interpreting error messages, understanding unexpected output, clarifying confusing terminology, unpacking instructions, identifying what "could" be causing a problem, understanding a surprising result in code or math.</p>
+          <p>The same sentence starter from C2 applies here, but so does this one: "I was doing <i>[action]</i> and got an unexpected result I cannot understand: <i>[error or crash]</i>, can you help me interpret the meaning of that output, without knowing what my code or solution looks like?"  </p>
+          <p>Side note: At some points in a course or project, clarifying issues might be a core skill. But for the most part, this is its own category.</p> 
+        </div>
+        <div class="card-cols">
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' clarification might be asking  AI to interpret error messages, translate jargon, explain robot symptoms, list common patterns, or broaden possibilities </li>
+                <li>AI may point out and provide possible interpretations and clues, but not diagnose or fix.</li>
+                <li>AI should be helping students to see more clearly, not to solve more of the problem</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Teachers' clarification might be asking  AI to clarify phrasing, surface alternative interpretations of student work, broaden the landscape of solutions, etc.</li>
+                <li>AI can assist with context-building but cannot replace teacher judgment</li>
+                <li>AI helps teachers zoom in and out: spot patters across problems or student misconceptions, or see what is different about a single outlier.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card" style="background: #fff; border: 1px solid #dce8ea; border-radius: 14px; padding: 28px;">
+        <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 14px;">C4 · Correct Issues</div>
+        <div style="font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;">Redirect! Correct with Core Skills</div>
+        <div style="font-size: 14px; line-height: 1.65; color: #56657a;">
+          <p>Correcting issues is a core skill, always. When you arrive here, you can always Clarify (C3) but you must use your Core Skills (C2) to actually make a revision. </p>
+          <p>Work that falls into this category might include determining the cause of an error, performing tests, choosing a debugging strategy, updating your code or reasoning, verifying which hypothesis is correct, or repairing a flawed argument.</p>
+          <p>Side note: the C3-C4 boundary can be a fuzzy one, and AI agents like to help. Sometimes this means they volunteer to take over and do the diagnosis or the fix for you. If this happens, acknowledge it and revise your asks for next time - be proactive about fending off AI's corrections. If it continues happening, then your core skills are not growing! Seek help!</p> 
+          <p>Yes Questions:
+            <ul>
+              <li>“What kinds of algorithms exist for reversing my route?”</li>
+              <li>“What are common strategies for line-following robots?”</li>
+              <li>“What methods do engineers use to detect sensor noise?”</li>
+              <li>“What are common approaches to trig substitution?”</li>
+          </ul></p>
+          <p>No Questions:
+            <ul>
+              <li>“Which of these should I use for my specific robot?”</li>
+              <li>“Given my robot behaves like this, which classic solution applies?”</li>
+              <li>“Here is my code and the error — which standard fix matches?”</li>
+          </ul></p>
+
+        </div>
+        <div class="card-cols">
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' correction might be correcting code, fixing mechanisms, diagnosing behavior, choosing tests — these are core disciplinary skills</li>
+                <li>Students do the fixing</li>
+                <li>AI may explain possibilities but not choose the fix</li>
+                <li>Return to C2</li>
+              </ul></div>
+          </div>
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Teachers' correction might be correcting assignments, refining rubrics, revising course structures — these are pedagogical core skills. </li>
+                <li>Teachers make the pedagogical corection</li>
+                <li>AI cannot replace judgment or design; it may assist after the teacher initiates the correction.</li>
+                <li>AI may help polish wording or identify missing pieces after the teacher sets direction.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card" style="background: #fff; border: 1px solid #dce8ea; border-radius: 14px; padding: 28px;">
+        <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 14px;">C5 · Construct Plans</div>
+        <div style="font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;">"Schedule it in!"</div>
+        <div style="font-size: 14px; line-height: 1.65; color: #56657a;">
+          <p>Overwhelmed? Not sure how to step forward or what the first step is? AI is welcome to support your executive functioning and study skills - this is a great use of technology. Just be sure you still get the practice in breaking down tasks by yourself some of the time, or you will find yourself overwhelmed by more and more simple tasks. Remember, unused muscles atrophy! </p>
+          <p>This includes planning projects, organizing multi-step work, generating checklists, mapping out your week, breaking down large assignments, prioritizing tasks, structuring a study plan.</p>
+        </div>
+        <div class="card-cols">
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' plan construction might be breaking assignments into steps, making study plans, organizing project sprints, generating checklists, previewing workload.</li>
+                <li>AI scaffolds task management, but does not do the learning.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Teachers' plan construction might be complex planning: sequencing units, mapping assessment timelines, building rubrics, structuring projects, creating handouts, planning lab workflows, managing cognitive load..</li>
+                <li>AI scaffolds logistics, but does not construct pedagogy.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card" style="background: #fff; border: 1px solid #dce8ea; border-radius: 14px; padding: 28px;">
+        <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 14px;">R · Reflection</div>
+        <div style="font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;">Always Solo</div>
+        <div style="font-size: 14px; line-height: 1.65; color: #56657a;">
+          <p>If your task doesn’t clearly fit any of the 5 C’s, it is likely reflection. </p>
+          <p>This includes personal insights, metacognition, “what I learned,” documenting your process, evaluating your growth, or any writing that requires your own perspective.</p>
+          <p>Remember, AI cannot know what lives inside your head unless you say it in your own words. That putting experience into words is what builds your mental models. And... once it's out there, use it! Do not let AI abstract out all personality and experience from your words.</p>
+        </div>
+        <div class="card-cols">
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' reflection might be personal reflection, meaning-making, metacognition, narrative writing, and identity-based insights.</li>
+                <li>Students do the reflecting (and writing)</li>
+                <li>AI cannot speak for your lived experience.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+                            <ul>
+                <li>Teachers' reflection might be professional reflection, observations about student learning, ethical reasoning, pedagogical insights</li>
+                <li>Teachers do the reflecting (and evaluation)</li>
+                <li>AI cannot replace teacher expertise, values, or philosophy of teaching.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- INSET CALLOUT -->
+    <div style="border-left: 3px solid #b8d8de; padding: 16px 22px; background: #f4f9fa; border-radius: 0 8px 8px 0; margin-bottom: 44px;">
+      <p style="font-size: 14.5px; line-height: 1.7; color: #4a596b; margin: 0 0 14px;">Using AI, in my view, is almost always allowed, and sometimes even encouraged. However, in <i>every</i> case we should be using AI with integrity and that includes the following <b>Three O's</b></p>
+      <ul class="callout-list" style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+        <li style="font-size: 14px; line-height: 1.6; color: #56657a;">
+          <b>On Purpose</b> <p>Use AI intentionally. Know when you're asking AI to do something and what you're asking for. Specifically, what verb do you want AI to be doing for you? </p><p>
+           <i>An example - I asked ChatGPT to help me organize some bulletpoints when I was building this framework, without changing any words: that's organizing. I also asked Claude code to "... build me out a static page for the AI framework that has a design similar in feel to the other pages ... and has placeholders for ... Please hook it up in all of the sane places and then I will fill in the text."  That's Claude building and designing for me.</i> <a href="#ref-1" style="color: #375798; font-size: 12px; vertical-align: super; text-decoration: none;">[1]</a> </p></li>
+        <li style="font-size: 14px; line-height: 1.6; color: #56657a;"><b>Out in the Open</b> <p>Be transparent about when and how you use AI. That means naming the work done by AI, even if you feel like it didn't show up in the final project.</p><p>
+          <i>Continuing the example: I used ChatGPT to process my thoughts in August of 2025 when I was distilling these ideas. However, the AI did not come up with any categories and the text on this page is all mine. The webpage itself was primarily built with Claude Code (and a lot of back and forth).</i></p></li>
+        <li style="font-size: 14px; line-height: 1.6; color: #56657a;"><b>Ownership</b> <p>It should always be clear who owns what part of the work you are presenting, and what you are claiming as yours. </p><p>
+          <i>Again, an example. The ideas on this page are mine, full and clear. The design of the webpage is shared ownership between AI (ClaudeCode) and myself. I'm comfortable with this, because I am not building my webdesign skills right now.</i></p></li>
+      </ul>
+    </div>
+
+    <!-- REFERENCES (plain, no card) -->
+    <div style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #93a3b5; margin-bottom: 20px;">Downloads</div>
+    <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;">
+      <li style="display: flex; align-items: baseline; gap: 12px;">
+        <span style="font-size: 13px; color: #548a96;">Coming soon.</span>
+      </li>
+      <!--<li style="display: flex; align-items: baseline; gap: 12px;">
+        <span style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; color: #0c5969; flex: none; width: 14px;">↓</span>
+        <span>
+          <a href="#" style="font-size: 14px; color: #0c5969; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">[Document title]</a>
+          <span style="font-size: 13px; color: #548a96; margin-left: 6px;">— [brief description of this downloadable]</span>
+        </span>
+      </li>-->
+    </ul>
+    <div style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #93a3b5; margin: 28px 0 20px;">References</div>
+    <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;">
+      <li id="ref-1" style="display: flex; align-items: baseline; gap: 12px; padding-top: 10px; border-top: 1px solid #dce8ea; margin-top: 2px;">
+        <span style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; color: #548a96; flex: none; width: 14px;">↗</span>
+        <span>
+          <span style="font-size: 13px; color: #548a96;"> 1. Hat Tip to Nick Zufelt for the idea of knowing what action you want AI to being doing.</span>
+        </span>
+      </li>
+
+      <!--<li style="display: flex; align-items: baseline; gap: 12px;">
+        <span style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; color: #548a96; flex: none; width: 14px;">↗</span>
+        <span>
+          <a href="#" style="font-size: 14px; color: #375798; font-weight: 500; text-decoration: underline; text-underline-offset: 3px;">[External reference title]</a>
+          <span style="font-size: 13px; color: #548a96; margin-left: 6px;">— [author, publication, or context]</span>
+        </span>
+      </li>-->
+
+    </ul>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="padding: 22px 36px; border-top: 1px solid #e4eaf8; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; background: #fff;">
+    <p style="font-size: 13px; color: #93a3b5; margin: 0; line-height: 1.6;">Content licensed <a href="LICENSE.md" style="color: #0c5969; font-weight: 500;">CC BY-NC-SA 4.0</a> · Katelin Bailey Lewellen. Curious? <a href="mailto:klewellen@andover.edu" style="color: #0c5969; font-weight: 500;">Get in touch.</a></p>
+    <p style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; color: #b5c1cd; margin: 0; letter-spacing: 0.06em;">KBL</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
