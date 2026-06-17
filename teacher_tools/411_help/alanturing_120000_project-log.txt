@@ -1,0 +1,63 @@
+===== AI USE BENCH ENTRY =====
+Timestamp: 2026-03-19T10:23:00
+Recorded: 03/19/2026, 10:23:00 AM
+Project: Project 1 · Line Follower
+Role: Hardware Lead
+Day: Day 4 · Revise
+Phase: Revise
+Skills: Curiosity; Testing SW & HW
+Issue: I need more information or inspiration
+LandedC: C1
+EffectiveC: C1
+FeltRight: —
+Alignment: ok
+Prompt: Give me 3 different approaches for my chassis layout. I've already sketched my own first idea.
+===== END ENTRY =====
+
+===== AI USE BENCH ENTRY =====
+Timestamp: 2026-03-04T12:05:00
+Recorded: 03/04/2026, 12:05:00 PM
+Project: Project 1 · Line Follower
+Role: Docs / Comms
+Day: Day 1 · Brainstorm
+Phase: Brainstorm
+Skills: Building SW & HW; Curiosity
+Issue: I need help fixing a problem I've already pinned down
+LandedC: C4
+EffectiveC: C3
+FeltRight: —
+Alignment: meh
+Prompt: I am trying to get my drive motors to turn left. Instead it is stopping. I tried checking wiring and saw no power.
+===== END ENTRY =====
+
+===== AI USE BENCH ENTRY =====
+Timestamp: 2026-03-20T15:03:00
+Recorded: 03/20/2026, 03:03:00 PM
+Project: Project 1 · Line Follower
+Role: Hardware Lead
+Day: Day 2 · Build
+Phase: Build
+Skills: Curiosity; Testing SW & HW
+Issue: I need help breaking the problem into steps
+LandedC: C5
+EffectiveC: C5
+FeltRight: yes
+Alignment: ok
+Prompt: Help me break down this build sprint into steps and a checklist. I've got 2 days.
+===== END ENTRY =====
+
+===== AI USE BENCH ENTRY =====
+Timestamp: 2026-03-05T13:35:00
+Recorded: 03/05/2026, 01:35:00 PM
+Project: Project 2 · Maze Solver
+Role: Software Lead
+Day: Day 4 · Revise
+Phase: Revise
+Skills: Curiosity; Tooling
+Issue: I need help breaking the problem into steps
+LandedC: C5
+EffectiveC: C5
+FeltRight: yes
+Alignment: ok
+Prompt: Help me break down this build sprint into steps and a checklist. I've got 2 days.
+===== END ENTRY =====
