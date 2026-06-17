@@ -1,6 +1,6 @@
 # Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 
-Copyright © 2024–2025 Katelin Bailey Lewellen. All rights reserved.
+Copyright © 2026 Katelin Bailey Lewellen. All rights reserved.
 
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
