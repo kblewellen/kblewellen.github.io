@@ -104,7 +104,7 @@ const TOOLS = {
   },
 };
 
-const ALL_TOOLS = [TOOLS.aiFramework, TOOLS.vexSim, TOOLS.gateCrashers, TOOLS.help411];
+const ALL_TOOLS = [TOOLS.aiFramework, TOOLS.vexSim, TOOLS.gateCrashers, TOOLS.help411, TOOLS.help411Teacher];
 
 const CLASSES = [
   {
@@ -124,7 +124,7 @@ const CLASSES = [
     title: 'Programming in Python',
     meta: 'CSC401 · Introductory · T1, T2',
     blurb: 'An introduction to computational thinking primarily through the exploration of the Python programming language. Students design and code their own programming projects throughout the course. The course sometimes includes additional applications such as programming introductory data analysis, game development, and vibe coding.',
-    tools: [],
+    tools: [TOOLS.aiFramework,],
   },
   {
     id: 'csc411',
@@ -133,7 +133,7 @@ const CLASSES = [
     title: 'Robotics',
     meta: 'CSC411 · Introductory · T1, T3',
     blurb: 'A hands-on, project-based course where students use the engineering process to engage in science-driven decision making and review physical concepts involved in the design and construction of a robot. Students create robots capable of complex behaviors while exploring different aspects of robot design and how they come together in the creation of a robot, including ethical and cultural elements surrounding the use of artificial intelligence.',
-    tools: [TOOLS.vexSim, TOOLS.help411],
+    tools: [TOOLS.aiFramework, TOOLS.vexSim, TOOLS.help411 ],
   },
   {
     id: 'csc454',
@@ -142,7 +142,7 @@ const CLASSES = [
     title: 'Computer Organization & Hardware',
     meta: 'CSC454 · Intermediate · T3',
     blurb: 'An introduction to the organization and design of computer systems. Students invent and explore the essential hardware and software components of computational devices. Topics include digital logic, circuit design, memory architectures and hierarchies, and assembly language(s). Over the course of the term, students will complete a series of projects that gradually build the components of a simple computer system in simulation.',
-    tools: [TOOLS.gateCrashers],
+    tools: [TOOLS.aiFramework, TOOLS.gateCrashers],
   },
   {
     id: 'csc551',
@@ -151,7 +151,7 @@ const CLASSES = [
     title: 'Data Structures & Algorithms',
     meta: 'CSC551 · Advanced · T3',
     blurb: 'An opportunity for students to study, build, test, and apply data structures such as stacks, queues, linked lists, binary trees, heaps, hash maps and graphs, including formulating appropriate algorithms to support their data. Along the way, students develop software engineering skills potentially including collaborative coding, source control, and test-driven development.',
-    tools: [],
+    tools: [TOOLS.aiFramework,],
   },
   {
     id: 'csc571',
@@ -160,7 +160,7 @@ const CLASSES = [
     title: 'Autonomous Systems',
     meta: 'CSC571 · Advanced · T2',
     blurb: 'A hands-on, project-driven introduction to the design and control of autonomous systems. Students plan and build cyber-physical and autonomous systems in self-selected domains. Their projects drive explorations of necessary robotics, artificial intelligence, and control engineering to achieve their goals. Woven throughout this work, the students explore the ethical and societal implications of these systems.',
-    tools: [TOOLS.vexSim, TOOLS.help411],
+    tools: [TOOLS.aiFramework,TOOLS.vexSim],
   },
   {
     id: 'mth',
