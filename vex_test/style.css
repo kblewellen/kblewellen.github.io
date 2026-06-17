@@ -1,0 +1,151 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #1b1d23;
+  color: #e8e8ea;
+}
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: #232631;
+  border-bottom: 1px solid #343847;
+}
+.topbar h1 { font-size: 1.15rem; margin: 0; }
+.subtitle { color: #9aa0b4; font-size: 0.85rem; }
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.9fr);
+  gap: 1rem;
+  padding: 1rem;
+  align-items: start;
+}
+
+.left-pane, .right-pane { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  background: #232631;
+  border: 1px solid #343847;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+}
+
+button {
+  background: #343847;
+  color: #e8e8ea;
+  border: 1px solid #454a5e;
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+button:hover:not(:disabled) { background: #454a5e; }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+button.primary { background: #3d6ad8; border-color: #3d6ad8; }
+button.primary:hover:not(:disabled) { background: #4d7ae6; }
+
+input[type="number"], select {
+  background: #15171d;
+  color: #e8e8ea;
+  border: 1px solid #454a5e;
+  border-radius: 6px;
+  padding: 0.25rem 0.4rem;
+}
+
+.file-upload {
+  position: relative;
+  background: #343847;
+  border: 1px solid #454a5e;
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.file-upload input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.file-name { color: #9aa0b4; font-size: 0.8rem; }
+.time-limit { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; margin-left: auto; }
+.time-limit input { width: 4rem; }
+
+#fieldCanvas {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #0e1015;
+  border: 1px solid #343847;
+  border-radius: 8px;
+}
+
+.transport {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  background: #232631;
+  border: 1px solid #343847;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+}
+.transport #scrubber { flex: 1; min-width: 120px; }
+#clockLabel { width: 5.5rem; text-align: right; color: #9aa0b4; }
+
+.status {
+  min-height: 1.4rem;
+  font-size: 0.85rem;
+  padding: 0 0.3rem;
+}
+.status.error { color: #ff8585; white-space: pre-wrap; }
+.status.ok { color: #7fd99a; }
+.status.warn { color: #e8c46a; }
+
+.panel {
+  background: #232631;
+  border: 1px solid #343847;
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+}
+.panel h2 { font-size: 0.95rem; margin: 0 0 0.5rem; }
+.hint { color: #9aa0b4; font-size: 0.78rem; margin: 0 0 0.6rem; }
+
+.input-group { margin-bottom: 0.7rem; }
+.input-group h3 { font-size: 0.8rem; color: #9aa0b4; margin: 0 0 0.35rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.axis-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; font-size: 0.78rem; }
+.axis-row label { width: 3.2rem; color: #cfd2dd; }
+.axis-row input[type="range"] { flex: 1; }
+.axis-row .val { width: 2.6rem; text-align: right; color: #9aa0b4; }
+
+.sensor-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.45rem; font-size: 0.8rem; flex-wrap: wrap; }
+.sensor-row label { width: 7.2rem; color: #cfd2dd; }
+.sensor-row input[type="range"] { flex: 1; min-width: 80px; }
+.sensor-row .val { width: 3.4rem; text-align: right; color: #9aa0b4; }
+
+.event-log {
+  max-height: 220px;
+  overflow-y: auto;
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.event-log .entry { padding: 0.1rem 0.3rem; border-radius: 4px; cursor: pointer; }
+.event-log .entry:hover { background: #343847; }
+.event-log .entry.note { color: #9aa0b4; }
+.event-log .entry.error { color: #ff8585; }
+.event-log .entry.active { background: #3d6ad8; color: white; }
+
+.source-view {
+  max-height: 320px;
+  overflow: auto;
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  font-size: 0.78rem;
+  white-space: pre;
+  margin: 0;
+}
