@@ -147,7 +147,7 @@ let activeId = null;
 
 function toolCardHTML(t) {
   return `
-    <a href="${t.href}" class="tool-card" style="
+    <div data-href="${t.href}" class="tool-card" style="
       background: #fff; border: 1px solid #dce8ea; border-radius: 14px;
       padding: 22px 20px; display: block; color: inherit;">
       <div style="
@@ -157,7 +157,7 @@ function toolCardHTML(t) {
       <div style="font-size: 16px; font-weight: 600; margin-bottom: 6px;">${t.name}</div>
       <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #548a96; margin-bottom: 10px;">${t.kind}</div>
       <div style="font-size: 13.5px; line-height: 1.5; color: #56657a;">${t.desc}</div>
-    </a>
+    </div>
   `;
 }
 
