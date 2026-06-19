@@ -12,13 +12,13 @@ Pure static HTML/CSS/vanilla JS — no build system, no framework.
 |---|---|---|
 | `index.html` | `/` | Public |
 | `open_resources.html` | `/open_resources.html` | Public |
-| `workshop.html` | `/workshop.html` | Password-protected (StaticCrypt) |
+| `workshop.html` | `/workshop.html` | Password-protected (StatiCrypt) |
 
 **`index.html`** — Main faculty profile. Sidebar navigation with sections for Projects, Courses, Tools, About, and Contact. Tool cards link to `open_resources.html`; individual tool links are disabled (`data-href`) until tools are publicly released.
 
 **`open_resources.html`** — Tabbed tool index for students and teachers. Tabs: General · 401 Python · 411 Robotics · 454 Organization · 551 Algorithms · 571 Autonomous · MTH Mathematics · Teacher. Default view shows all public tools.
 
-**`workshop.html`** — Teacher workshop tool index. AES-encrypted with [StaticCrypt](https://robinmoisson.github.io/staticrypt/) (password: `ai.co-lab`). Contains live links to all four tools.
+**`workshop.html`** — Teacher workshop tool index. AES-encrypted with [StatiCrypt](https://robinmoisson.github.io/staticrypt/). Contains live links to all four tools.
 
 ---
 
@@ -57,7 +57,7 @@ Push to `main` → live at `kblewellen.github.io` within ~60 seconds.
 `raw/workshop.html` is the editable source for the workshop page. After editing it, re-encrypt before pushing:
 
 ```bash
-npx staticrypt raw/workshop.html -p "ai.co-lab" -o workshop.html
+npx staticrypt raw/workshop.html -p "<password>" -o workshop.html
 ```
 
 The `.staticrypt.json` salt file must be committed alongside `workshop.html` so the same password works across re-encryptions — browsers save the derived key in localStorage and won't re-prompt if the salt is consistent.
