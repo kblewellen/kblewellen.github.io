@@ -30,7 +30,7 @@
 
   <!-- HEADER -->
   <div class="page-header" style="background: #032260; border-bottom: 1px solid #021a52; padding: 18px 36px; display: flex; align-items: center; justify-content: space-between;">
-    <span id="header-title" style="font-size: 15px; font-weight: 600; color: #548a96; letter-spacing: -0.01em; transition: color .15s ease;">Open Resources from Ms. Lewellen</span>
+    <span id="header-title" style="font-size: 15px; font-weight: 600; color: #548a96; letter-spacing: -0.01em; transition: color .15s ease;">Open Resources from Katelin Bailey Lewellen</span>
     <a href="index.html" style="font-size: 13px; color: #548a96; display: flex; align-items: center; gap: 5px;">← Main site</a>
   </div>
 
@@ -50,7 +50,7 @@
     <!-- tools -->
     <div style="margin-bottom: 44px;">
       <div id="tools-label" style="font-family: 'Spline Sans Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">Tools</div>
-      <p id="tools-ack" style="font-size: 12.5px; line-height: 1.65; color: #b5c1cd; margin: 0 0 18px; max-width: 640px;">Tools built from original AI use framework and custom curriculum by Katelin Bailey Lewellen and CS Skills system from CS@Andover. Code interfaces developed in collaboration with Claude Code.</p>
+      <p id="tools-ack" style="font-size: 12.5px; line-height: 1.65; color: #b5c1cd; margin: 0 0 18px; max-width: 640px;">These tools were built from (1) the original AI use framework, May 2026 version (2) my custom curriculum from 411, 454, 551, and 571 and (3) the CS Skills system as developed by the CS@Andover group as a whole. Some code interfaces below were developed in collaboration with Claude Code, and are tagged as such.</p>
       <div id="tools-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;"></div>
     </div>
 
@@ -71,7 +71,7 @@ const TOOLS = {
     kind: 'Framework',
     kicker2: 'KBL',
     glyph: '◆',
-    desc: 'The AI use accountability framework underlying CS@Andover AI-integrated coursework — roles, skills, and expectations for students working with AI.',
+    desc: 'The AI use framework provides a categorization for types of work that students might use AI for and some guidelines for AI use in each category.',
     href: 'ai_framework.html',
     linkable: true,
   },
@@ -80,7 +80,7 @@ const TOOLS = {
     kind: 'Student tool',
     kicker2: 'KBL · Claude Code',
     glyph: '◈',
-    desc: 'Pick your skills, name your need, and compose an AI ask that keeps the thinking yours.',
+    desc: 'Structured prompt-builder for 411: pick your role, phase of work, skills, and name your need. The tool helps you compose an ask that keeps the thinking yours, with logbook output. Compatible with the AI framework.',
     href: 'student_tools/411_help/411_help_v4.html',
     linkable: true,
   },
@@ -89,7 +89,7 @@ const TOOLS = {
     kind: 'Teacher tool',
     kicker2: 'KBL · Claude Code',
     glyph: '⊞',
-    desc: 'Upload student logbook entries and see a heatmap of where the class sought AI help — broken down by role and day.',
+    desc: 'Upload student logbook entries from the 411 help tool (student version) and see a heatmap of days and roles where help was sought, as well as what categories and structures those help requests took. ',
     href: 'teacher_tools/411_help/411_help_heatmatp_v1.html',
     linkable: true,
   },
@@ -98,7 +98,7 @@ const TOOLS = {
     kind: 'Game',
     kicker2: 'KBL · Claude Code',
     glyph: '⊘',
-    desc: 'Debug broken logic gate circuits — trace the signal, find what GlitchBot swapped.',
+    desc: 'A very quick progressive review game for debugging logic gates. AI theme: "GlitchBot scrambled the digital fortress. Debug broken logic gate circuits before the chaos spreads!"',
     href: 'edu_games/gate_crashers/index.html',
     linkable: true,
   },
@@ -107,7 +107,7 @@ const TOOLS = {
     kind: 'Simulator',
     kicker2: 'KBL · Claude Code',
     glyph: '▷',
-    desc: 'Upload your VEXcode Python and watch your robot trace its path on a virtual field.',
+    desc: 'Provides a timestamped execution log from uploaded exp-python code. Allows students to inject events like sensor triggers and controller inputs, and regenerate the execution log. Preliminary low-fidelity visuals trace a path. This is a logic verification tool, not a true simulation or interpreter.',
     href: 'vex_test/index.html',
   },
 };
