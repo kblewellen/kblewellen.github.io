@@ -67,6 +67,16 @@
     color: #56657a;
     font-style: italic;
   }
+  .prose blockquote.hl-amber {
+    background: #fef9ec;
+    border-left-color: #f59e0b;
+    padding: 10px 16px;
+    border-radius: 0 6px 6px 0;
+  }
+  mark.hl-amber {
+    background: #fef9ec;
+    color: inherit;
+  }
   .prose ul {
     margin: 0 0 18px;
     padding-left: 22px;
@@ -215,6 +225,52 @@
   }
   .prose h3:first-child { margin-top: 0; }
 
+  /* ── Focus mode ── */
+  #focus-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fef3c7;
+    border: 1.5px solid #f59e0b;
+    opacity: 0.15;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    z-index: 100;
+  }
+  #focus-toggle:hover { opacity: 0.7; }
+  body.focus-mode #focus-toggle { opacity: 0.5; background: #f59e0b; }
+
+  body.focus-mode .body-wrap,
+  body.focus-mode .body-wrap * {
+    color: transparent !important;
+    border-color: transparent !important;
+    background: transparent !important;
+    text-decoration-color: transparent !important;
+  }
+  body.focus-mode mark.hl-amber,
+  body.focus-mode mark.hl-amber * {
+    color: #4a596b !important;
+    background: transparent !important;
+  }
+  body.focus-mode mark.hl-amber {
+    background: #fef9ec !important;
+  }
+  body.focus-mode blockquote.hl-amber {
+    color: #56657a !important;
+    background: #fef9ec !important;
+    border-left-color: #f59e0b !important;
+  }
+  body.focus-mode .section-label,
+  body.focus-mode .note-card,
+  body.focus-mode .inline-toc,
+  body.focus-mode .section-divider,
+  body.focus-mode .tool-img-link,
+  body.focus-mode footer { display: none; }
+  body.focus-mode .page-header { opacity: 0.08; pointer-events: none; }
+
   /* ── Footer ── */
   footer {
     padding: 22px 36px;
@@ -249,12 +305,12 @@
 
   <!-- ── OPENER ── -->
   <div class="section-label">Building, or Thinking?</div>
-  <p class="opener-hook">For me, this workshop started with software: what tools am I already behind on? What do I need to know to keep up with students and expand my own practice? And then it morphed. It started with software, and it ended with a question of judgment and responsibility. All the projects I worked on this week circled back to the same question...</p>
+  <p class="opener-hook">For me, this workshop started with software: what tools am I already behind on? What do I need to know to keep up with students and expand my own practice? And then it morphed. <mark class="hl-amber">It started with software, and it ended with a question of judgment and responsibility.</mark> All the projects I worked on this week circled back to the same question...</p>
 
   <div class="prose">
     <blockquote> When generative resources are abundant — AI, but also a classmate, a tutor, online forums, or a teacher — how do students and teachers decide what responsible delegation is?</blockquote>
-    <p>I started by learning about a whole host of tools, and practicing with them. But somewhere along the way I stopped building things with the AI tools, directly at least, and started doing participant observation and data collection (sorry, not sorry!) What fascinated me wasn't the individual tools and AI agents. It was watching what happened when people started building, and what their questions revealed about our students' experiences. </p>
-    <p>The prototypes I played with on Monday and Tuesday are the visible artifacts of this week. The larger, more unexpected takeaway is are conceptual synthesis and a new research agenda that somehow developed in the background of some really good conversations.</p>
+    <p>I started by learning about a whole host of tools, and practicing with them. This was an interesting place to play in. But somewhere along the way I stopped building things with the AI tools, directly at least, and started doing participant observation and data collection (sorry, not sorry!) <strong>What fascinated me wasn't the individual tools and AI agents. It was watching what happened when people started building, and what their questions revealed about our students' experiences.</strong> </p>
+    <p>The prototypes I played with on Monday and Tuesday are the visible artifacts of this week. The unexpected takeaways are the mutation of an existing framework and a research question that developed in the background.</p>
   </div>
 
   <nav class="inline-toc" aria-label="Jump to section">
@@ -273,8 +329,8 @@
   <div id="before-workshop" class="section-label">Before the Workshop</div>
 
   <div class="prose" style="margin-bottom: 28px;">
-    <p>I brought a framework with me to the conference. I built it in the fall of 2025, in response to a student complaint that I thought was completely fair: teachers were telling students not to use AI while visibly using it themselves. I didn't want to be part of that problem. I use AI extensively — at work and at home — but I try to be intentional about it. The framework is an attempt to encode those instincts into something I could share transparently with students, and that they could hold me to in return. Here, the teacher-student contract changes into a shared vocabulary to talk with other teachers about our instincts on AI use.</p>
-    <p> I came here wanting to see if this framework held up under fire and to get specific counterpoints to its categories. And (spoiler alert!) that didn't happen in the way I expected, but boy, did that happen. </p>
+    <p>I brought a framework with me to the workshop. I built it in the summer and fall of 2025, in response to a student complaint that I thought was a fair critique: <strong>teachers were telling students not to use AI while visibly using it themselves.</strong> I didn't want to be part of that problem. I use AI extensively — at work and at home — but I try to be intentional about it. I thought I was being consistent with my use, but I wasn't quite sure what my instincts were saying, precisely. The framework is an attempt to encode those instincts into something I could share transparently with students, and that they could hold me to in return. Here, the words that were created as a teacher-student contract changes into a shared vocabulary to talk with other teachers about our instincts on AI use.</p>
+    <p> <mark class="hl-amber">I came here wanting to see if this framework held up under fire and to get specific counterpoints to its categories. And (spoiler alert!) that didn't happen in the way I expected, but boy, did that happen.</mark> </p>
   </div>
 
   <div class="note-card">
@@ -291,7 +347,7 @@
   <div id="what-i-built" class="section-label">What I Built</div>
 
   <div class="prose" style="margin-bottom: 32px;">
-    <p>During the workshop I used AI-assisted development to build and iterate on tools that put the framework to work — in the classroom and the professional development room. Each tool below is labeled by its primary audience.</p>
+    <p>During the workshop I used AI-assisted development to build and iterate on small handful of tools that put the framework to work. All are focused fundamentally around the student experience, but they come from slightly different directions. Each tool below is labeled by its primary audience.</p>
   </div>
 
   <!-- AI Framework Survey -->
@@ -302,7 +358,7 @@
       <div class="tool-desc">
         <p>This pairs with <a href="https://codesagainstacademy.com/" target="_blank" rel="noopener">Codes Against Academy</a> — a pre-existing card deck from Josh Lake in which educators (or students) rank AI use scenarios on a single dimension: how ethical or legal is this? It's a useful question, but it collapses a lot of complexity into one axis.</p>
         <p>The survey (and/or informal conversation) adds a second dimension of identifying the process, naming which of the 5Cs best describes how the AI was used. The result starts to map the space more precisely than "it depends," which is the direction most AI ethics conversations devolve in.</p>
-        <p>Collecting data is just that --- data. It's not consensus, but it's not meant to be. So far the disagreements have been as interesting as the agreements, and when people consistently disagree on a scenario, that's useful information.</p>
+        <p>Collecting data is just that: data. It's not consensus, but it's not meant to be. So far the disagreements have been as interesting as the agreements, and when people are consistently disagreeing on a scenario, that's useful information.</p>
       </div>
       <div style="flex: 0 0 35%; display: flex; flex-direction: column; gap: 18px;">
         <a href="https://codesagainstacademy.com/" target="_blank" rel="noopener" class="tool-img-link" style="flex: none;">
@@ -322,7 +378,7 @@
     <div class="tool-name">Landing Page</div>
     <div class="tool-layout">
       <div class="tool-desc">
-        <p>I generated a landing page organizing these prototype tools for browsing and giving visitors a single place to find everything. Building and hosting the site was itself part of this week's work.</p>
+        <p>I generated a landing page organizing these prototype tools for browsing and giving visitors a single place to find everything. Building and hosting the site was itself part of this week's work. Necessarily, but not fundamentally interesting.</p>
       </div>
       <a href="index.html" class="tool-img-link">
         <img src="thumbnails/landing_page.png" alt="Workshop portal landing page">
@@ -336,7 +392,7 @@
     <div class="tool-name">Framework Writeup</div>
     <div class="tool-layout">
       <div class="tool-desc">
-        <p>The 5Cs model has a long-form home on the website — student- and teacher-facing guidance for each C. As you'll see below, it's already outdated, but consumable in its current form.</p>
+        <p>The 5Cs model has a new, long-form home on the website, containing the motivation for the model as well as student- and teacher-facing guidance for each C. Writing this intentionally in my own voice was an intentional choice to make the model more clear and more shareable. </p><p>As you'll see below, it's already outdated, but consumable in its current form.</p>
       </div>
       <a href="ai_framework.html" class="tool-img-link">
         <img src="thumbnails/ai_framework.png" alt="AI Framework — the 5-Cs published page">
@@ -350,7 +406,7 @@
     <div class="tool-name">411 Help</div>
     <div class="tool-layout">
       <div class="tool-desc">
-        <p>Structured prompt-builder for 411: pick your role, phase of work, skills, and name your need. The tool helps you compose an ask that keeps the thinking yours, with logbook output. Compatible with the AI framework. <i>Very rough draft.</i></p>
+        <p>This, pedagogoically the most interesting tool I vibe coded. It is a structured prompt-builder for robotics: pick your role, phase of work, skills, and name your need. The tool helps you compose a prompt (for AI, but also for humans) is clear, responsible, and accountable. It keeps the thinking yours, and leaves a trail with logbook output. Based off of and compatible with the AI framework. <i>Very rough draft.</i></p>
       </div>
       <a href="student_tools/411_help/411_help_v4.html" class="tool-img-link">
         <img src="thumbnails/411_help_student.png" alt="411 Help — multi-step bench UI">
@@ -364,7 +420,7 @@
     <div class="tool-name">AI Use Dashboard</div>
     <div class="tool-layout">
       <div class="tool-desc">
-        <p>Upload student logbook entries from the 411 help tool (student version) and see a heatmap of days and roles where help was sought, as well as what categories and structures those help requests took. <i>Even rougher draft.</i></p>
+        <p>Immediately after generating the prior tool I realized I wanted a way to work with the audit trails. This is the result. Upload student logbook entries from the 411 help tool (student version) and see a heatmap of days and roles where help was sought, as well as what categories and structures those help requests took. <i>Even rougher draft.</i></p>
       </div>
       <a href="teacher_tools/411_help/411_help_heatmatp_v1.html" class="tool-img-link">
         <img src="thumbnails/411_help_teacher.png" alt="AI Use Dashboard — heatmap by role and day">
@@ -378,7 +434,7 @@
     <div class="tool-name">VEX Test</div>
     <div class="tool-layout">
       <div class="tool-desc">
-        <p>Provides a timestamped execution log from uploaded exp-python code. Allows students to inject events like sensor triggers and controller inputs, and regenerate the execution log. Preliminary low-fidelity visuals trace a path. This is a logic verification tool, not a true simulation or interpreter.<i>Early prototype.</i></p>
+        <p>This is the tool that students might find most interesting and frustrating. It takes uploaded exp-python code and provides a timestamped execution log of what the robot will do. From there, it allows students to inject events like sensor triggers and controller inputs, and regenerate the execution log. Preliminary low-fidelity visuals trace a path. This is fundamentally a testing tool for logic verification, not a true simulation or interpreter.<i>Early prototype.</i></p>
       </div>
       <a href="vex_test/index.html" class="tool-img-link">
         <img src="thumbnails/vex_test.png" alt="VEX Test — virtual field canvas and event log">
@@ -392,7 +448,7 @@
     <div class="tool-name">Gate Crashers</div>
     <div class="tool-layout">
       <div class="tool-desc">
-        <p>A very quick progressive review game for debugging logic gates. AI theme: "GlitchBot scrambled the digital fortress. Debug broken logic gate circuits before the chaos spreads!" <i>Cute sample, unlikely to be polished.</i></p>
+        <p>This is one of those very quick - see what vibe-coding can do - prototypes that looks flashy and has very little content or utility under the hood. This is a progressive review game for a logic gates unit, and asks students to debug the output. AI says: "GlitchBot scrambled the digital fortress. Debug broken logic gate circuits before the chaos spreads!" <i>Cute sample, unlikely to be continued.</i></p>
       </div>
       <a href="edu_games/gate_crashers/index.html" class="tool-img-link">
         <img src="thumbnails/gate_crashers.png" alt="Gate Crashers — Level 1 broken gate circuit">
@@ -405,10 +461,10 @@
   <!-- ── WHAT BUILDING REVEALED ── -->
   <div id="what-building-revealed" class="section-label">What Building Revealed</div>
   <div class="prose">
-    <p>The thing I kept running into is this: AI can produce almost any tool, document, or artifact you describe to it, which makes "can I build this?" the wrong question. The interesting question to consider becomes "should I build this, and if so, <i>why?</i>" The tool, above, that I'm proudest of from this week isn't technically ambitious. It's pretty basic. But it's work that makes student thinking more visible: it finds the cognitive work and places it squarely in front of the student.</p>
-    <p>That idea of exposing cognitive work and intentionally centering it turned out to be a more durable criterion than I expected.</p>
-    <p>One unexpected observation from the week and its focus on metacognition was how analog much of my own process remains. While I spent time building AI-assisted prototypes and often had several requests out to AI agents, I also found myself working at a table covered in scenario cards, sticky notes, handwritten diagrams, and random pieces of paper covered in scribbled notes. Many of the most productive moments came not from prompting a bot, but from sorting examples, sketching relationships, and talking through disagreements with other educators.</p>
-    <p>That feels important. I might be uniquely analog, but that desire to pause and reflect the slow, arduous way became more important the more often I was prompting. The more I built, the more I needed to stop and judge that work. And building ability came before judgment. This work, then, reinforced my belief that powerful tools do not eliminate the need for human reflection and judgment. In many ways, they increase the need for that judgment. When we don't have to wait to generate prototypes, the challenge is deciding which of the many possible ideas matter, how they should be used, and what responsibilities come with them.</p>
+    <p>As I built out the above tools, I kept running headfirst into this: <mark class="hl-amber">AI can produce almost any tool, document, or artifact you describe to it, which makes "can I build this?" the wrong question. The more interesting question to consider becomes "<i>should</i> I build this, and if so, <i>why?</i>"</mark> The tool that I'm proudest of from this week isn't technically ambitious. It's pretty basic. But it's a tool that makes student thinking more visible: it finds the cognitive work and places it squarely in front of the student. THat is fundamentally work that worthwhile and contributes to my goal as a teacher. It also augments, but does not replace, the role I hold in the classroom.</p>
+    <p>That pairing of considering my role and of exposing cognitive work, so I can intentionally center it, is one that stuck with me.</p>
+    <p>One unexpected quirk from the week was that it rapidly shifted from "cool tool" to focus on thinking-about-learning and thinking-about-thinking and building-for-learning-about-thinking. And as that shifted, my own process remained fundamentally analog. While I spent time building AI-assisted prototypes and often had several requests out to AI agents, I also found myself working at a table covered in scenario cards, sticky notes, handwritten diagrams, and random pieces of paper covered in scribbled notes. Many of the best insights came not from prompting a bot, but from sorting and intensely considering examples, sketching relationships, and talking through disagreements with other educators.</p>
+    <p>That feels important. I might be uniquely analog, but that desire to pause and reflect the slow, arduous way became more important the more often I was prompting. The more I built, the more I needed to stop and judge that work. And building ability came before judgment. This week, then, reinforced my belief that powerful tools do not eliminate the need for human reflection and judgment. In many ways, they increase the need for that judgment. When we don't have to wait to generate prototypes, the challenge is deciding which of the many possible ideas matter, how they should be used, and what responsibilities come with them.</p>
   </div>
 
   <hr class="section-divider">
@@ -416,7 +472,7 @@
   <!-- ── CASE STUDIES ── -->
   <div id="case-studies" class="section-label">Case Studies</div>
   <div class="prose">
-    <p>Most arguments I've heard about AI in schools aren't really about AI — they're about classification. Students and teachers often agree that learning matters, and they often agree about the high-level goals such as "AI shouldn't replace the purpose of the assignment". What they don't agree on is a shared language for describing what "replace the purpose of the assignment" means. Purpose for whom? In what role? With what assignment? And what level of challenge and/or accommodation?</p>
+    <p><mark class="hl-amber">Most arguments I've heard about AI in schools aren't really about AI — they're about classification.</mark> Students and teachers often agree that learning matters, and they often agree about the high-level goals such as "AI shouldn't replace the purpose of the assignment". What they don't agree on is a shared language for describing what "replace the purpose of the assignment" means. Purpose for whom? In what role? With what assignment? And what level of challenge and/or accommodation?</p>
     <p>Three examples show why these details matter:</p>
     <ul>
       <li>Asking AI to generate a plan for deploying biological weapons.</li>
@@ -429,7 +485,7 @@
 
     <p>The strongest reactions came from scenarios I posed to my fellow attendees — scenarios where generative tools appeared to replace what people expected to be a uniquely human contribution: basic decency between humans, an understanding of when laughing isn't good humor, what it means to give a genuine compliment. Those reactions point toward something beyond cognitive work and towards ownership and authenticity.</p>
 
-    <p>These examples suggest that people are evaluating more than one thing at once. They are judging outcomes, processes, roles, and authenticity. The original framework focuses primarily on process. This week's discussions convinced me that those other dimensions deserve more explicit attention.</p>
+    <p><mark class="hl-amber">These examples suggest that people are evaluating more than one thing at once. They are judging outcomes, processes, roles, and authenticity.</mark> The original framework focuses primarily on process. This week's discussions convinced me that those other dimensions deserve more explicit attention.</p>
  </div>
 
   <hr class="section-divider">
@@ -437,7 +493,7 @@
   <!-- ── THE JOURNEY ── -->
   <div id="the-journey" class="section-label">The Journey on Fast Forward</div>
   <div class="prose">
-    <p>I've seen students go through the journey of skill acquisition and reflection and metacognition over the course of weeks or months or years, many times before. But this workshop was a different lens on that journey. I spent the last several days in a room for hours at a time watching AI novices build their first apps and slideshows and websites, and prune 10,000 emails from their backlogs, and then have a whole roller coaster of emotions:
+    <p>I've seen students go through the journey of skill acquisition and reflection and metacognition over the course of weeks or months or years, many times before. But this workshop was a different take on that journey. <mark class="hl-amber">I spent the last several days in a room watching AI novices build their first apps and slideshows and websites, and prune 10,000 emails from their backlogs, and then have a whole roller coaster of emotions:</mark>
         <ul>
           <li>The world is my oyster!</li>
           <li>This is hard</li>
@@ -446,7 +502,7 @@
           <li>How do I even decide what the right thing is to build??</li>
           <li>I just want the golf-cart version of this tool.</li>
         </ul>
-        Getting to sit alongside these educators and see their journey firsthand was such a valuable experience and I am so grateful to them. And it reinforced a lesson I have learned repeatedly from students: technical capability arrives long before judgment, and the more powerful the tools become, the more important that judgment becomes. </p>
+        Getting to sit alongside these educators and see their journey firsthand was such a valuable experience and I am so grateful to them. And it reinforced a lesson I have learned repeatedly from students: <mark class="hl-amber">technical capability arrives long before judgment, and the more powerful the tools become, the more important that judgment becomes.</mark> </p>
 
   </div>
   
@@ -465,9 +521,9 @@
     <p>I originally thought the framework was helping people answer:</p>
     <blockquote>Is this AI use acceptable?</blockquote>
     <p>I now think it is helping them answer:</p>
-    <blockquote>Am I outsourcing work that should still belong to me?</blockquote>
+    <blockquote class="hl-amber">Am I outsourcing work that should still belong to me?</blockquote>
       <p>Early reworks of the framework keep the 5Cs but add clarifying questions like "is the outcome morally sound, regardless of process?"; "does the level of mental exertion change, and if so, where does the extra capacity go?"; "does this accurately represent myself, my lived experience, and my unique contribution to the scenario?". The result is less a set of crisp categories and more a process for reflecting on responsible delegation.</p>
-      <p>The survey data is still coming in, and some of what it will reveal I don't yet know how to interpret. The categories may not be sufficiently distinct — when educators disagree about which C applies, that's either a gap in the framework or a genuinely contested case, and I need more data to tell which. I don't yet know whether students classify their own AI use the same way their teachers would, or whether expertise level changes the calculus. And there are forms of generative assistance the current model doesn't reach cleanly. Those are the threads I'm pulling on next.</p>
+      <p>I'm still collecting data about what teachers think about scenarios, and some of what that data says I don't yet know how to interpret. The categories may not be sufficiently distinct — when educators disagree about which C applies, that's either a gap in the framework or a genuinely dubious case, and I need more data to tell which. I don't yet know whether students classify their own AI use the same way their teachers would, or whether expertise level changes the calculus. And there are forms of generative assistance the current model doesn't reach cleanly. All of these are interesting place to look at in the next phase.</p>
   </div>
 
   <hr class="section-divider">
@@ -475,7 +531,7 @@
   <!-- ── LOOKING FORWARD ── -->
   <div id="looking-forward" class="section-label">Looking Forward</div>
   <div class="prose">
-    <p>The most important outcome of this week is a research question I didn't know was sitting in the wings all year.</p>
+    <p>The most important outcome of this week is a research question I didn't realize was building up for the last year.</p>
     <blockquote>Can we build a framework for the distribution of cognitive work that allows teachers and students to agree on what is actually offloaded and whether it should have been?</blockquote>
     <p>The next phase of this work involves:</p>
     <ul>
@@ -494,6 +550,14 @@
   <p>Built with <span style="color: #56657a; font-weight: 500;">Claude Code</span>. Workshop report · June 2026.</p>
   <p style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; color: #b5c1cd; letter-spacing: 0.06em;">KBL</p>
 </footer>
+
+
+<button id="focus-toggle" title="Toggle highlights" aria-label="Toggle focus mode"></button>
+<script>
+  document.getElementById('focus-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('focus-mode');
+  });
+</script>
 
 </body>
 </html>
