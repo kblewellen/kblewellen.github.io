@@ -27,7 +27,7 @@
     .sb-actions { margin-top: 0 !important; flex-direction: row !important; flex-wrap: wrap !important; gap: 6px !important; }
     main { height: auto !important; overflow-y: visible !important; }
     .sec { padding: 36px 20px !important; }
-    .projects-grid { grid-template-columns: 1fr !important; }
+    .projects-grid > div { grid-template-columns: 1fr !important; }
     .course-row { grid-template-columns: 1fr !important; gap: 4px !important; }
     .about-card { flex-direction: column !important; }
     .about-img { width: 100% !important; height: 160px !important; }
@@ -84,30 +84,40 @@
     <!-- PROJECTS -->
     <section id="projects" class="sec" style="padding: 64px 64px 56px; border-bottom: 1px solid #e4eaf8;">
       <div style="font-family: 'Spline Sans Mono', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #0c5969; margin-bottom: 24px;">Current projects &amp; interests</div>
-      <div class="projects-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+      <div class="projects-grid" style="display: flex; flex-direction: column;">
 
-        <div style="padding: 24px; border: 1px solid #dce8ea; border-radius: 13px; background: #ffffff;">
-          <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 12px;">Pedagogy</div>
-          <div style="font-size: 17px; font-weight: 600; margin-bottom: 9px; letter-spacing: -0.01em;">Engineering as a Back Door to the Liberal Arts</div>
-          <div style="font-size: 14px; line-height: 1.65; color: #56657a;">Building a robot is an act of writing, reasoning, and design — it just doesn't look like a humanities class. I'm interested in how engineering and making can serve as unexpected entry points to the broader habits of mind that a liberal arts education is actually after.</div>
+        <div style="display: grid; grid-template-columns: 100px 1fr; gap: 20px; padding: 20px 0; border-top: 1px solid #e4eaf8;">
+          <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; padding-top: 3px;">Framework</div>
+          <div>
+            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em;">AI Use with Integrity</div>
+            <div style="font-size: 14px; line-height: 1.65; color: #56657a;"><p>In the spring of 2025 I noticed a repeated complaint from students: teachers said "don't use AI" but clearly were using AI themselves. At the same time, I kept hearing a different complaint from teachers: students didn't understand that teachers and students write for fundamentally different reasons, so of course their use of AI would be different. But no one seemed able to explain exactly where the line was between outsourcing necessary experiences and simply outsourcing drudgery. Many teenagers would describe their homework as drudgery; many teachers would describe that same homework as necessary practice.</p> <p> The thing is, none of this problem is new. Students, teachers, parents, coaches, and institutions have always relied on outside help, some of it generative. AI simply accelerated the speed, scale, and accessibility of generative assistance, forcing old questions into unusual prominence. Those questions include issues at the intersection of ownership, responsibility, and identity. </p> <p>Since hearing those original complaints, I've been developing a framework for thinking about-and perhaps more importantly discussing—generative assistance, delegated cognitive work, and authenticity. The framework is an attempt to create a shared language of cognitive labor, not just rules. It is currently being revised based on educator feedback gathered during a June 2026 AI workshop. </p></div>
+            <a href="workshop.html" style="display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 500; color: #0c5969;">→ Workshop report</a>
+          </div>
         </div>
 
-        <div style="padding: 24px; border: 1px solid #dce8ea; border-radius: 13px; background: #ffffff;">
-          <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 12px;">Framework</div>
-          <div style="font-size: 17px; font-weight: 600; margin-bottom: 9px; letter-spacing: -0.01em;">AI Use with Integrity</div>
-          <div style="font-size: 14px; line-height: 1.65; color: #56657a;">A structured classroom model for navigating AI — not a list of what's allowed, but a shared vocabulary for when AI helps, when it doesn't, and how to stay in the driver's seat. Built around five use categories that keep students responsible for their own thinking.</div>
+        <div style="display: grid; grid-template-columns: 100px 1fr; gap: 20px; padding: 20px 0; border-top: 1px solid #e4eaf8;">
+          <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; padding-top: 3px;">Ethics</div>
+          <div>
+            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em;">Ethical Computer Science</div>
+            <div style="font-size: 14px; line-height: 1.65; color: #56657a;"><p>With the advent of extremely powerful large language models, students can increasingly build tools that reach far beyond their immediate community. A few solid ideas and enough persistence can now produce software that would have required a team of developers only a few years ago. But, these same students are still developing their executive functioning, and have barely begun to understand what their own view of ethics and morality being a "good human" might entail. But it's not because they <i> can't </i> develop that sense. It's because they haven't been guided and challenged enough in that lane, and because they view technical spaces as ones in which tools are neutral and functional programs are good programs. In a world where adolescents are building technology that you might rely on next year, we should want them to be thinking and reflecting in intentional, structured ways about what a good program is. </p> 
+            <p>That "goodness" extends beyond functional and into morally good, defensible, unbiased. Students should consider responsibilty, impact, security, privacy, and even the concept of what it means to flourish. But training that sense requires ethics and moral questioning throughout their technical training, not just as an add-on before they sign off on shipping code. This is the work of embedding ethics in our computer science education. </p></div>
+          </div>
         </div>
 
-        <div style="padding: 24px; border: 1px solid #dce8ea; border-radius: 13px; background: #ffffff;">
-          <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 12px;">Ethics</div>
-          <div style="font-size: 17px; font-weight: 600; margin-bottom: 9px; letter-spacing: -0.01em;">Ethical Computer Science</div>
-          <div style="font-size: 14px; line-height: 1.65; color: #56657a;">CS taught as a discipline with civic weight. Students don't just build things — they examine who benefits, who's harmed, and what assumptions are baked into the systems they create. Ethics isn't a unit at the end of the course; it runs through everything.</div>
+        <div style="display: grid; grid-template-columns: 100px 1fr; gap: 20px; padding: 20px 0; border-top: 1px solid #e4eaf8;">
+          <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; padding-top: 3px;">Co-Curriculars</div>
+          <div>
+            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em;">Robotics Team</div>
+            <div style="font-size: 14px; line-height: 1.65; color: #56657a;"><p>As advisor to the school's FTC robotics team, I see a side of students that they may not show in classes, sports, or in the dorm. Many of my most devoted students on the competition team are truly engaging with it <i> as a team</i>. Students learn about leading, working towards a common goal, sharing accountability, and managing projects outside the confinement of classes, grades, and the push towards the college transcript.</p><p>For the most dedicated students, it will be one of the most enduring commitments they make in high school, and one in which they have a chance to make a true impact and leave a legacy. Students design, build, program, and compete with a robot of their own making, on a with its own structure and responsibility. This is one of the most "real life" things they can do, and they know it. In this space, responsibility, passion, and academic inquiry become real, and that reality is both rare and transformative.</p> </div>
+          </div>
         </div>
 
-        <div style="padding: 24px; border: 1px solid #dce8ea; border-radius: 13px; background: #ffffff;">
-          <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; margin-bottom: 12px;">Competition</div>
-          <div style="font-size: 17px; font-weight: 600; margin-bottom: 9px; letter-spacing: -0.01em;">FIRST Tech Challenge</div>
-          <div style="font-size: 14px; line-height: 1.65; color: #56657a;">Advisor to the school's FTC robotics team. Students design, build, program, and compete with a robot of their own making — combining hardware, software, and strategy under real competition pressure, on a real deadline.</div>
+        <div style="display: grid; grid-template-columns: 100px 1fr; gap: 20px; padding: 20px 0; border-top: 1px solid #e4eaf8;">
+          <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #0e3177; padding-top: 3px;">Pedagogy</div>
+          <div>
+            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em;">Engineering as Liberal Arts</div>
+            <div style="font-size: 14px; line-height: 1.65; color: #56657a;"><p>In my time working with engineers in graduate school and industry, I noticed that the best engineers are those who engaged with a liberal arts eduction. These engineers have encountered and engaged with a wide range of ideas and are equipped to speak with a wide range of people about their work, adjusting their arguments to match their audience. On the flipside of that experience in industry is my experience in education: engineering is often viewed with suspicion in the best liberal arts institutions. </p><p> That said, the best engineering classes often teach the true span of liberal arts: science and mathematics through calculations of scale, angles of construction, and physical mechanics, arts through design and aesthetics, and humanities through research and technical writing, oral presentation skills, and reasoning. As a result, these classes are uniquely well-suited to be a microcosm of the liberal arts education as well as a place to connect cross-disciplinary learning and test out ideas. I'm interested in the ways in which engineering is an unexpected entry point to the broader liberal arts.</p></div>
+          </div>
         </div>
 
       </div>
@@ -250,7 +260,7 @@
         <img class="about-img" src="headshot.jpg" alt="Katelin Bailey Lewellen" style="flex: none; width: 105px; height: 116px; border-radius: 12px; border: 1px solid #cdd8e8; object-fit: cover; object-position: center top;">
         <div style="flex: 1; min-width: 0; font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 16px;">
           <p>Katelin Lewellen is an educator, programmer, and designer who teaches and plays at the intersection of computer science, engineering, and mathematics. She has taught at every level from middle school to graduate school; in public schools, private schools, university, and community college. She currently teaches at Phillips Academy Andover. In the classroom, Katelin challenges students to develop their own mental models and processes for thinking, designing, and problem-solving. Her classes emphasize hands-on exploration where students make choices defensible by both justification and reflection.   </p>
-          <p> Katelin is committed to intertwining computer science with ethics, problem solving, human relationships, research, and both written and oral argumentation. She is focused on cultivating interesting learning environments seeded with thorny problems for students to grapple with. She has spent time developing a classroom framework for student AI use, but remains suspicious about AI's role in a society that values being both human and humane. She coaches the school's FIRST Tech Challenge robotics team (PARC 28170), and enjoys casual creation on campus with tools both physical and digital. </p>
+          <p> Katelin is committed to intertwining computer science with ethics, problem solving, human relationships, research, and judgement. These interests are reflected in her emphasis on both written and oral argumentation. She is focused on cultivating interesting learning environments seeded with thorny problems for students to grapple with. She has spent time developing a framework for helping students and teachers discuss generative assistance, AI, and where cognitive work belongs. Katelin looks at AI with a cautiously optimistic view, but remains deeply concerned with preserving human judgment, responsibility, and authenticity. She coaches the school's FIRST Tech Challenge robotics team (PARC 28170), and enjoys casual creation on campus with tools both physical and digital. </p>
           <p> Wherever you meet her, Katelin is a detail-loving systems thinker who finds joy in both the messy middle of making and the clean precision of intentional design. She is committed to the never-ending task of making classes as sustainable and joyful as they are rigorous, for both students and teachers. She is also one of the most analog computer science teachers you are likely to meet. </p>
           <p>You can ask Katelin about knitting, quilting, baking, running, baseball, or books and puzzles of all sorts. She lives in Andover with her husband, three kids, and a large dog.</p>
         </div>
