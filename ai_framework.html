@@ -32,9 +32,57 @@
     .page-header { padding: 12px 16px !important; flex-wrap: wrap !important; gap: 6px !important; }
     .card-cols { grid-template-columns: 1fr !important; }
   }
+
+  /* Student / Teacher view toggle */
+  .view-toggle-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    border-bottom: 1px solid #dce8ea;
+    padding: 10px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .view-toggle-label {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #93a3b5;
+  }
+  .view-toggle {
+    display: inline-flex;
+    background: #f1f4f8;
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .view-toggle button {
+    padding: 6px 18px;
+    border-radius: 16px;
+    border: none;
+    background: transparent;
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: #56657a;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+  }
+  .view-toggle button:hover:not(.active) { color: #15202e; }
+  .view-toggle button.active { background: #0e3177; color: #fff; }
+  body.view-cs .col-math, body.view-cs .col-teacher,
+  body.view-math .col-cs, body.view-math .col-teacher,
+  body.view-teacher .col-cs, body.view-teacher .col-math { display: none; }
+  body.view-cs .card-cols,
+  body.view-math .card-cols,
+  body.view-teacher .card-cols { grid-template-columns: 1fr; }
 </style>
 </head>
-<body>
+<body class="view-cs">
 
 <div style="min-height: 100vh; display: flex; flex-direction: column;">
 
@@ -42,6 +90,16 @@
   <div class="page-header" style="background: #032260; border-bottom: 1px solid #021a52; padding: 18px 36px; display: flex; align-items: center; justify-content: space-between;">
     <span style="font-size: 15px; font-weight: 600; color: #548a96; letter-spacing: -0.01em;">AI Framework · Katelin Bailey Lewellen</span>
     <a href="index.html" style="font-size: 13px; color: #548a96;">← Main site</a>
+  </div>
+
+  <!-- VIEW TOGGLE -->
+  <div class="view-toggle-bar">
+    <span class="view-toggle-label">Viewing as</span>
+    <div class="view-toggle" role="group" aria-label="Switch between CS student, math student, and teacher guidance">
+      <button type="button" data-view="cs" class="active" aria-pressed="true">CS Student</button>
+      <button type="button" data-view="math" aria-pressed="false">Math Student</button>
+      <button type="button" data-view="teacher" aria-pressed="false">Teacher</button>
+    </div>
   </div>
 
   <!-- CONTENT -->
@@ -52,9 +110,9 @@
     <!-- PREFACE -->
     <div style="font-family: 'Spline Sans Mono', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #0c5969; margin-bottom: 16px;">AI Use Framework</div>
     <h1 style="font-size: 34px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: #15202e; margin: 0 0 22px;">The 5-Cs Model of Ethical AI Use</h1>
-    <p style="font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 14px; max-width: 680px;"> This is a framework that I started building in the fall of 2025 in response to student complaints I heard around campus - that teachers said "don't use AI" but clearly were using AI themselves. This seemed like a valid complaint, and I highly value transparency in my teaching, so I wanted to do something to contribute to a solution, not be part of the problem. I use AI at work (and at home) extensively. But I'm intentional about my use and try to structure it well. This framework is an attempt to encode the ideas behind how and why I use AI myself, as a first pass at a moral compass for AI use.</p>
-    <p style="font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 14px; max-width: 680px;"> You (as a student, teacher, or other community member) are building your own ethical relationship with AI, and that's part of becoming an independent thinker and adapting to changing technology. It can also be really hard!</p>
-    <p style="font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 52px; max-width: 680px;"> As a student in my classes, you'll be asked to take on this framework and live with my moral code for the trimester. That might feel uncomfortable, or it might help provide clarity. In either case, I encourage you to be open with me about feedback and where it challenges you. Recall,  however, that while personal ethics can evolve, academic integrity is a community standard, and your actions must meet that standard.    </p>
+    <p style="font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 14px;"> This is a framework that I started building in the fall of 2025 in response to student complaints I heard around campus - that teachers said "don't use AI" but clearly were using AI themselves. This seemed like a valid complaint, and I highly value transparency in my teaching, so I wanted to do something to contribute to a solution, not be part of the problem. I use AI at work (and at home) extensively. But I'm intentional about my use and try to structure it well. This framework is an attempt to encode the ideas behind how and why I use AI myself, as a first pass at a moral compass for AI use.</p>
+    <p style="font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 14px;"> You (as a student, teacher, or other community member) are building your own ethical relationship with AI, and that's part of becoming an independent thinker and adapting to changing technology. It can also be really hard!</p>
+    <p style="font-size: 15.5px; line-height: 1.75; color: #4a596b; margin: 0 0 52px;"> As a student in my classes, you'll be asked to take on this framework and live with my moral code for the trimester. That might feel uncomfortable, or it might help provide clarity. In either case, I encourage you to be open with me about feedback and where it challenges you. Recall,  however, that while personal ethics can evolve, academic integrity is a community standard, and your actions must meet that standard.    </p>
     <!-- COMPONENT SECTION KICKER -->
     <div style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #93a3b5; padding-top: 24px; border-top: 1px solid #e4eaf8; margin-bottom: 20px;">Framework components</div>
 
@@ -70,8 +128,8 @@
           <p>Side note - there are some instances where you as a person don't want to own the creative authorship for your project. This is likely okay on personal projects, but don't assume it's acceptable in class. </p>
         </div>
         <div class="card-cols">
-          <div>
-            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+          <div class="col-cs">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a CS student</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
                 <li>You might use creativity to generate ideas, sketches, predictions, and models before using AI</li>
@@ -81,7 +139,19 @@
               </ul>
             </div>
           </div>
-          <div>
+          <!-- MATH STUDENT — placeholder, currently duplicates CS Student copy above. Edit for math-specific guidance. -->
+          <div class="col-math">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a Math student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>You might use creativity to generate ideas, sketches, predictions, and models before using AI</li>
+                <li>AI might expand on your ideas or help you distill them after you've generated as far as you can.</li>
+                <li>Creativity is often part of the discipline learning in your classes, even in unexpected places (math!)</li>
+                <li>AI should not block a student's opportunity to build intuition and design sense.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-teacher">
             <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
@@ -105,8 +175,8 @@
           <p>"I am trying to do <i>[skill or action]</i>. I tried and expected <i>[desired result]</i> but instead got <i>[actual result]</i>. I then attempted these things: <i>[list three revisions or additional actions, like research]</i>. I saw the following results <i>[list results from revisions]</i>. Can you help me?"  </p>
         </div>
         <div class="card-cols">
-          <div>
-            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+          <div class="col-cs">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a CS student</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
                 <li>Students' core skills might be coding, debugging, algebraic manipulation, mechanical reasoning, modeling, test design, problem solving</li>
@@ -115,7 +185,18 @@
               </ul>
             </div>
           </div>
-          <div>
+          <!-- MATH STUDENT — placeholder, currently duplicates CS Student copy above. Edit for math-specific guidance. -->
+          <div class="col-math">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a Math student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' core skills might be coding, debugging, algebraic manipulation, mechanical reasoning, modeling, test design, problem solving</li>
+                <li>AI cannot do the thinking for the students</li>
+                <li>Work in this category should feel like a "good stretch" - not so easy that you never make a mistake, not so hard that you feel like you are only making mistakes. Use resources to tune that mental exertion level.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-teacher">
             <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
@@ -138,8 +219,8 @@
           <p>Side note: At some points in a course or project, clarifying issues might be a core skill. But for the most part, this is its own category.</p> 
         </div>
         <div class="card-cols">
-          <div>
-            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+          <div class="col-cs">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a CS student</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
                 <li>Students' clarification might be asking  AI to interpret error messages, translate jargon, explain robot symptoms, list common patterns, or broaden possibilities </li>
@@ -148,7 +229,18 @@
               </ul>
             </div>
           </div>
-          <div>
+          <!-- MATH STUDENT — placeholder, currently duplicates CS Student copy above. Edit for math-specific guidance. -->
+          <div class="col-math">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a Math student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' clarification might be asking  AI to interpret error messages, translate jargon, explain robot symptoms, list common patterns, or broaden possibilities </li>
+                <li>AI may point out and provide possible interpretations and clues, but not diagnose or fix.</li>
+                <li>AI should be helping students to see more clearly, not to solve more of the problem</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-teacher">
             <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
@@ -184,8 +276,8 @@
 
         </div>
         <div class="card-cols">
-          <div>
-            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+          <div class="col-cs">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a CS student</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
                 <li>Students' correction might be correcting code, fixing mechanisms, diagnosing behavior, choosing tests — these are core disciplinary skills</li>
@@ -194,7 +286,18 @@
                 <li>Return to C2</li>
               </ul></div>
           </div>
-          <div>
+          <!-- MATH STUDENT — placeholder, currently duplicates CS Student copy above. Edit for math-specific guidance. -->
+          <div class="col-math">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a Math student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' correction might be correcting code, fixing mechanisms, diagnosing behavior, choosing tests — these are core disciplinary skills</li>
+                <li>Students do the fixing</li>
+                <li>AI may explain possibilities but not choose the fix</li>
+                <li>Return to C2</li>
+              </ul></div>
+          </div>
+          <div class="col-teacher">
             <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
@@ -216,8 +319,8 @@
           <p>This includes planning projects, organizing multi-step work, generating checklists, mapping out your week, breaking down large assignments, prioritizing tasks, structuring a study plan.</p>
         </div>
         <div class="card-cols">
-          <div>
-            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+          <div class="col-cs">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a CS student</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
                 <li>Students' plan construction might be breaking assignments into steps, making study plans, organizing project sprints, generating checklists, previewing workload.</li>
@@ -225,7 +328,17 @@
               </ul>
             </div>
           </div>
-          <div>
+          <!-- MATH STUDENT — placeholder, currently duplicates CS Student copy above. Edit for math-specific guidance. -->
+          <div class="col-math">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a Math student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' plan construction might be breaking assignments into steps, making study plans, organizing project sprints, generating checklists, previewing workload.</li>
+                <li>AI scaffolds task management, but does not do the learning.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-teacher">
             <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
@@ -246,8 +359,8 @@
           <p>Remember, AI cannot know what lives inside your head unless you say it in your own words. That putting experience into words is what builds your mental models. And... once it's out there, use it! Do not let AI abstract out all personality and experience from your words.</p>
         </div>
         <div class="card-cols">
-          <div>
-            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a student</div>
+          <div class="col-cs">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a CS student</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
               <ul>
                 <li>Students' reflection might be personal reflection, meaning-making, metacognition, narrative writing, and identity-based insights.</li>
@@ -256,7 +369,18 @@
               </ul>
             </div>
           </div>
-          <div>
+          <!-- MATH STUDENT — placeholder, currently duplicates CS Student copy above. Edit for math-specific guidance. -->
+          <div class="col-math">
+            <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #0c5969; margin-bottom: 8px;">As a Math student</div>
+            <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
+              <ul>
+                <li>Students' reflection might be personal reflection, meaning-making, metacognition, narrative writing, and identity-based insights.</li>
+                <li>Students do the reflecting (and writing)</li>
+                <li>AI cannot speak for your lived experience.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-teacher">
             <div style="font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #375798; margin-bottom: 8px;">As a teacher</div>
             <div style="font-size: 13.5px; line-height: 1.6; color: #56657a;">
                             <ul>
@@ -292,7 +416,7 @@
       <li id="ref-1" style="display: flex; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #dce8ea; margin-bottom: 10px;">
         <span style="font-family: 'Spline Sans Mono', monospace; font-size: 11px; color: #548a96; flex: none; width: 14px;">↗</span>
         <span>
-          <span style="font-size: 13px; color: #548a96;"> 1. Hat Tip to Nick Zufelt for the idea of knowing what action you want AI to being doing.</span>
+          <span style="font-size: 13px; color: #548a96;"> 1. Hat Tip to Nick Zufelt for the idea of knowing what action you want AI to be doing.</span>
         </span>
       </li>
 
@@ -345,6 +469,21 @@ Other content on this website remains licensed under CC BY-NC-SA 4.0 unless othe
   </footer>
 
 </div>
+
+<script>
+  document.querySelectorAll('.view-toggle button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var view = btn.dataset.view;
+      document.body.classList.remove('view-cs', 'view-math', 'view-teacher');
+      document.body.classList.add('view-' + view);
+      document.querySelectorAll('.view-toggle button').forEach(function(b) {
+        var active = b === btn;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', active);
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
